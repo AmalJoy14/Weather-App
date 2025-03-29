@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: linear-gradient(papayawhip, white);
+  background-image: url('./clouds.jpg');
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,6 +10,8 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: white;
+  
 }
 
 code {

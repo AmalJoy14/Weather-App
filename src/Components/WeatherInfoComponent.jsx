@@ -3,17 +3,18 @@ import styled from "styled-components";
 import {WeatherIcons} from "../App";
 
 export const WeatherInfoIcons = {
-    sunset: "/react-weather-app/icons/temp.svg",
-    sunrise: "/react-weather-app/icons/temp.svg",
-    humidity: "/react-weather-app/icons/humidity.svg",
-    wind: "/react-weather-app/icons/wind.svg",
-    pressure: "/react-weather-app/icons/pressure.svg",
+    sunset: "/icons/temp.svg",
+    sunrise: "/icons/temp.svg",
+    humidity: "/icons/humidity.svg",
+    wind: "/icons/wind.svg",
+    pressure: "/icons/pressure.svg",
 };
 const Location = styled.span`
   margin: 15px auto;
   text-transform: capitalize;
   font-size: 28px;
   font-weight: bold;
+  
 `;
 const Condition = styled.span`
   margin: 20px auto;
@@ -22,6 +23,7 @@ const Condition = styled.span`
   & span {
     font-size: 28px;
   }
+    
 `;
 const WeatherInfoLabel = styled.span`
   margin: 20px 25px 10px;
@@ -52,6 +54,7 @@ const WeatherInfoContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  
 `;
 const InfoContainer = styled.div`
   display: flex;
@@ -63,6 +66,7 @@ const InfoContainer = styled.div`
 const InfoIcon = styled.img`
   width: 36px;
   height: 36px;
+  filter: invert(1);
 `;
 const InfoLabel = styled.span`
   display: flex;
