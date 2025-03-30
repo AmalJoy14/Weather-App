@@ -79,6 +79,14 @@ const InfoLabel = styled.span`
   }
 `;
 
+const StyledButton = styled.button`
+    margin: "10px",
+    padding: "8px",
+    cursor: "pointer",
+    border: "none",
+    background-color: "transparent",
+`;
+
 const WeatherInfoComponent = (props) => {
     const {name, value} = props;
     return (
@@ -91,14 +99,16 @@ const WeatherInfoComponent = (props) => {
         </InfoContainer>
     );
 };
-const WeatherComponent = (props) => {
-    const {weather} = props;
+const WeatherComponent = ({ weather, city, updateCity, updateWeather }) => {
     const isDay = weather?.weather[0].icon?.includes('d')
     const getTime = (timeStamp) => {
         return `${new Date(timeStamp * 1000).getHours()} : ${new Date(timeStamp * 1000).getMinutes()}`
     }
     return (
-        <>
+        <>  
+            <StyledButton onClick={() => { updateCity(""); updateWeather(null); }} >
+                🔙 Back
+            </StyledButton>
             <WeatherContainer>
                 <Condition>
                     <span>{`${Math.floor(weather?.main?.temp - 273)}°C`}</span>

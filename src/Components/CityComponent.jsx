@@ -15,8 +15,8 @@ const SearchBox = styled.form`
     font-size: 14px;
     border: none;
     outline: none;
-    font-family: Montserrat;
-    font-weight: bold;
+    font-family: Roboto;
+    font-weight: 300;
   }
   & button {
     background-color: black;
@@ -26,8 +26,7 @@ const SearchBox = styled.form`
     border: none;
     outline: none;
     cursor: pointer;
-    font-family: Montserrat;
-    font-weight: bold;
+    font-weight: 300;
   }
 `;
 const ChooseCityLabel = styled.span`

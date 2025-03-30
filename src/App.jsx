@@ -25,13 +25,14 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   width: 380px;
   padding: 20px 10px;
   margin: auto;
   border-radius: 4px;
   box-shadow: 0 3px 6px 0 #555;
   background: white;
-  font-family: Montserrat;
+  font-family: Roboto;
   background: linear-gradient(
     120deg,
     rgb(7, 41, 134) 0%,
@@ -43,21 +44,17 @@ const Container = styled.div`
 const AppLabel = styled.span`
   color: black;
   margin: 20px auto;
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
   color: white;
+  font-family: Roboto;
 `;
-const CloseButton = styled.span`
-  padding: 2px 3px;
-  background-color: black;
-  border-radius: 50%;
-  color: white;
-  position: absolute;
-`;
+
 
 function App() {
   const [city, updateCity] = useState();
   const [weather, updateWeather] = useState();
+
   const fetchWeather = async (e) => {
     e.preventDefault();
     const response = await Axios.get(
@@ -67,9 +64,9 @@ function App() {
   };
   return (
     <Container>
-      <AppLabel>React Weather App</AppLabel>
+      <AppLabel>Weather App</AppLabel>
       {city && weather ? (
-        <WeatherComponent weather={weather} city={city} />
+        <WeatherComponent weather={weather} city={city} updateCity={updateCity} updateWeather={updateWeather} />
       ) : (
         <CityComponent updateCity={updateCity} fetchWeather={fetchWeather} />
       )}
