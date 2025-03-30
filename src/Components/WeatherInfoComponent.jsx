@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import {WeatherIcons} from "../App";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 export const WeatherInfoIcons = {
     sunset: "/icons/temp.svg",
@@ -80,12 +81,35 @@ const InfoLabel = styled.span`
 `;
 
 const StyledButton = styled.button`
-    margin: "10px",
-    padding: "8px",
-    cursor: "pointer",
-    border: "none",
-    background-color: "transparent",
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-size: 16px;
+    background: transparent;
+    position: absolute;
+    margin: 10px;
+    top: 0;
+    left: 0;
 `;
+
+
+const WeatherIcons = {
+  "01d": "/icons/sunny.svg",
+  "01n": "/icons/night.svg",
+  "02d": "/icons/day.svg",
+  "02n": "/icons/cloudy-night.svg",
+  "03d": "/icons/cloudy.svg",
+  "03n": "/icons/cloudy.svg",
+  "04d": "/icons/perfect-day.svg",
+  "04n": "/icons/cloudy-night.svg",
+  "09d": "/icons/rain.svg",
+  "09n": "/icons/rain-night.svg",
+  "10d": "/icons/rain.svg",
+  "10n": "/icons/rain-night.svg",
+  "11d": "/icons/storm.svg",
+  "11n": "/icons/storm.svg",
+};
 
 const WeatherInfoComponent = (props) => {
     const {name, value} = props;
@@ -107,7 +131,7 @@ const WeatherComponent = ({ weather, city, updateCity, updateWeather }) => {
     return (
         <>  
             <StyledButton onClick={() => { updateCity(""); updateWeather(null); }} >
-                🔙 Back
+              <FontAwesomeIcon icon={faArrowLeft} />
             </StyledButton>
             <WeatherContainer>
                 <Condition>
